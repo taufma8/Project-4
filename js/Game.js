@@ -16,11 +16,11 @@
     constructor () {
         this.missed = 0;
         this.phrases = [
-         {phrase: 'Hello world'},
-         {phrase: 'Goodbye world'},
-         {phrase: 'You lose'},
-         {phrase: 'You win'},
-         {phrase: 'Make lemonade'}
+         new Phrase ('Hello world'),
+         new Phrase ('YOLO'),
+         new Phrase ('You lose'),
+         new Phrase ('You win'),
+         new Phrase ('Make lemonade')
         ];
         this.activePhrase = null;
     } 
@@ -35,26 +35,36 @@
 // hides the start screen overlay, calls the getRandomPhrase() method, and sets the activePhrase property with the chosen phrase. It also adds that phrase to the board by calling the addPhraseToDisplay() method on the active Phrase object.
     startGame () {
         $('#overlay').hide();
-        this.getRandomPhrase();
-        let activePhrase = this.phrases;
-        addPhraseToDisplay();
+        this.activePhrase = this.getRandomPhrase();
+        this.activePhrase.addPhraseToDisplay();    
     };
 
 // It checks to see if the button clicked by the player matches a letter in the phrase, and then directs the game based on a correct or incorrect guess. 
-    handleInteraction () {};
+    handleInteraction (e) {
+        console.log(this);
+        if (this.activePhrase.checkLetter(e.target.textContent)) {
+            this.activePhrase.showMatchedLetter(e.target.textContent);
+        } else {
+            this.removeLife();
+        }
+        this.checkForWin();
+    };
 
 // this method removes a life from the scoreboard, by replacing one of the liveHeart.png images with a lostHeart.png image (found in the images folder) and increments the missed property. 
-    removeLife() {};
+    removeLife() {
+        this.missed++;
+    };
 
 // this method checks to see if the player has revealed all of the letters in the active phrase.
     checkForWin() {
-        if () {
-            return true;
-        } else {
-            return false;
-        }
-    };
+       // if () {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // };
 
 // depending on the outcome of the game, updates the overlay h1 element with a friendly win or loss message.
-    gameOver () {boolean};
- }
+//     gameOver () {boolean};
+}
+}

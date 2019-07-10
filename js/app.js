@@ -13,10 +13,23 @@
 //       console.log(`Phrase - phrase: `, phrase.phrase);
 // };
 
-const game = new Game();
-game.startGame();
-console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+
+
 // const phrase = new Phrase();
-// game.getRandomPhrase();
 // phrase.addPhraseToDisplay();
 //  logPhrase(game.getRandomPhrase());
+let game;
+$('#btn__reset').on('click', function () {
+    game = new Game();
+    game.startGame();
+
+    $('.key').on('click', function (e) {
+        game.handleInteraction(e);
+    });
+});
+
+// const randomPhrase = game.getRandomPhrase();
+// const phrase = new Phrase (randomPhrase.phrase);
+// phrase.addPhraseToDisplay();
+
+// console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
