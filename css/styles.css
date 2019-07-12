@@ -60,6 +60,12 @@ button {
   cursor: pointer;
 }
 
+button:hover { 
+  color: white;
+  cursor: pointer;
+  background: green;
+}
+
 #btn__reset {
 	width: 200px;
 	margin: 0 auto;
@@ -86,7 +92,7 @@ button {
 /* Title */
 
 .header {
-  color: #3a3f58;
+  color: green;
 }
 
 
@@ -107,8 +113,6 @@ button {
 .space {
   width: 15px;
 }
-
-
 
 .show {
   color: #fff;

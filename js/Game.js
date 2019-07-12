@@ -102,22 +102,4 @@ class Game {
     }
 }
 
-// document.onkeydown = function(e) {
-//     if (gameOver) {
-//         resetGame();
-//         gameOver = false;
-//     } else {
-//        if (e.keyCode >= 65 &&  e.keyCode <= 90) {
-//            e.key.toLowerCase();
-//        } 
-//     }
-// }
-
-// B = '';
-//     L;
-//     for (let i = 65; 90 >= i; i++) {
-//         L = String.fromCharCode(i);
-//         B += '<button id="B2" on click="getLetter(\''+L+'\');">' + L + '</button>';
-//     }
-//     document.getElementById('box1').innerHTML = B;
 
