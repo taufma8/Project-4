@@ -14,7 +14,7 @@ class Game {
             new Phrase ('Barking Up The Wrong Tree'),
             new Phrase ('Back to Square One'),
             new Phrase ('Beauty Is In The Eye Of The Beholder'),
-            new Phrase ('You Cant Have Your Cake And Eat It Too'),
+            new Phrase ('Curiosity Killed The Cat'),
             new Phrase ('Make lemonade')
         ];
         this.activePhrase = null;
@@ -39,6 +39,7 @@ class Game {
 //checks to see if the button clicked matches a letter in the phrase. 
 //if it does, it adds the class and attribute to make the letter not clickable anymore.
 //then checks for win if its the chosen class and removes life if its the wrong class.
+//also, if checkfor win is true, then end game.
     handleInteraction (e) {
         console.log(this);
         if (this.activePhrase.checkLetter(e.target.textContent)) {
@@ -49,6 +50,7 @@ class Game {
             $(e.target).addClass('wrong').attr('disabled', true);
             this.removeLife();
         }  
+
     };
 
 //the remove life function keeps track of the counter (missed)
